@@ -1,7 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PostList from './components/PostList/PostList';
-import PostDetail from './components/PostDetails/PostDetails';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PostList from "./pages/PostList";
+import PostDetail from "./pages/PostDetails";
+
 
 function App() {
   return (

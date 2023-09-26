@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styles from "./PostList.module.css";
+import { fetchPosts } from "../shared/api/api";
 
-const fetchPosts = async (page) => {
-  try {
-    const response = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`
-    );
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching posts:", error);
-    return [];
-  }
-};
+// import { HandleScrollEffect } from "../../../shared/hooks/hooks";
 
 const PostList = () => {
   const [page, setPage] = useState(1);
+
   const {
     data: posts,
     isLoading,
